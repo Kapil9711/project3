@@ -10,11 +10,12 @@ const BlurLoading = () => {
     const interval = setInterval(() => {
       setCount((prev) => prev - 1);
       if (counter % 10 === 0) setBlur((prev) => prev - 1);
-      if (counter === 50) stopInterval();
+      if (counter <= 0) stopInterval();
       counter--;
     }, 60);
     function stopInterval() {
       console.log("clear interval");
+      console.log(count);
       clearInterval(interval);
     }
   }, []);
